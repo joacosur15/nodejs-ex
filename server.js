@@ -7,11 +7,11 @@ var express = require('express'),
     
 Object.assign=require('object-assign')
 
-https
-  .createServer(app)
-  .listen(8080, ()=>{
-    console.log('server is runing at port 8080')
-  });
+//https
+ // .createServer(app)
+ // .listen(8080, ()=>{
+ //   console.log('server is runing at port 8080')
+ // });
   
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
@@ -34,4 +34,4 @@ app.use(function(err, req, res, next){
 //app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
-module.exports = https ;
+module.exports = app ;

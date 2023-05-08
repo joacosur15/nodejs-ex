@@ -1,6 +1,6 @@
 // Import builtin NodeJS modules to instantiate the service
 const https = require("https");
-const fs = request("fs");
+const fs = require("fs");
 
 // Import the express module
 const express = require("express");

@@ -7,11 +7,14 @@ var express = require('express'),
     
 Object.assign=require('object-assign')
 
-//https
- // .createServer(app)
- // .listen(8080, ()=>{
- //   console.log('server is runing at port 8080')
- // });
+
+https.createServer({
+   cert: fs.readFileSync('cert.pem'),
+   key: fs.readFileSync('key.pem')
+ },app).listen(8080, function(){
+	console.log('Servidor https correindo en el puerto 8080');
+});
+
   
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
@@ -31,7 +34,7 @@ app.use(function(err, req, res, next){
   res.status(500).send('Something bad happened!');
 });
 
-app.listen(port, ip);
+//app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = app ;

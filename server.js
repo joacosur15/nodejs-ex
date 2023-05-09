@@ -1,8 +1,9 @@
 //  OpenShift sample Node application
 var express = require('express'),
     app     = express(),
-    morgan  = require('morgan');
-    https   = require("https");
+    morgan  = require('morgan'),
+    https   = require("https"),
+    http    = require("http"),
     fs      = require("fs");
     
 Object.assign=require('object-assign')
